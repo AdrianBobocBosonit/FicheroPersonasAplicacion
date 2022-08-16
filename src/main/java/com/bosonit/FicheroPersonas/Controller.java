@@ -20,8 +20,17 @@ public class Controller {
         return nombre.isEmpty()?"Hola mundo":"Hola " + nombre;
     }
 
+    @GetMapping("/user")
+    public String saludo2() {
+        return "Hola Mundo";
+    }
+
     @PostMapping("/useradd")
     public Persona addUser(@RequestBody Persona persona) {
+        System.out.println(persona.getName());
+        System.out.println(persona.getEdad());
+        System.out.println(persona.getCiudad());
         return persona;
     }
+
 }
